@@ -1,18 +1,7 @@
-:root {
-  /* Color Palette */
-  --bg-main: #FFF7E1;
-  /* Cream */
-  --c-magenta: #FF00FF;
-  /* Primary Pop */
-  --c-yellow: #FFF000;
-  /* Action Yellow */
-  --c-green: #00FF9D;
-  /* Electric Green */
-  --c-cyan: #00D1FF;
-  /* Cyan Blue */
-  --c-black: #000000;
-  /* Solid Black */
+/* Tailwind CSS — must be first */
+@import "tailwindcss";
 
+:root {
   /* iDEAS365 Design System Colors */
   --c-sapphire: #5E9BEB;
   --c-slate-light: #f3f4f6;
@@ -21,12 +10,9 @@
   --font-main: 'Outfit', system-ui, sans-serif;
   --font-sarabun: 'Sarabun', sans-serif;
 
-  --shadow-hard: 4px 4px 0px 0px var(--c-black);
-  --shadow-hard-hover: 6px 6px 0px 0px var(--c-black);
-  --border-black: 2px solid var(--c-black);
   --radius-main: 12px;
 
-  /* Dark Mode Variables (prepared for future use) */
+  /* Dark Mode Variables */
   --dm-bg: #1a1a1a;
   --dm-surface: #2d2d2d;
   --dm-text: #ffffff;
@@ -37,8 +23,6 @@
 body {
   margin: 0;
   font-family: var(--font-main);
-  background-color: var(--bg-main);
-  color: var(--c-black);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
@@ -48,52 +32,7 @@ button {
   font-family: inherit;
 }
 
-/* Utilities for Neo-Brutalist Look */
-.neo-box {
-  background: white;
-  border: var(--border-black);
-  box-shadow: var(--shadow-hard);
-  border-radius: var(--radius-main);
-}
-
-.neo-btn {
-  border: var(--border-black);
-  box-shadow: var(--shadow-hard);
-  border-radius: var(--radius-main);
-  transition: all 0.2s ease;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.neo-btn:hover:not(:disabled) {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hard-hover);
-}
-
-.neo-btn:active:not(:disabled) {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px var(--c-black);
-}
-
-.neo-input {
-  width: 100%;
-  padding: 12px;
-  border: var(--border-black);
-  border-radius: var(--radius-main);
-  font-size: 1rem;
-  background: white;
-  outline: none;
-  transition: box-shadow 0.2s;
-}
-
-.neo-input:focus {
-  box-shadow: var(--shadow-hard);
-}
-
-/* Tailwind CSS Directives */
-@import "tailwindcss";
-
-/* Dark Mode Support (prepared for future use) */
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
     --dm-bg: #1a1a1a;
@@ -102,6 +41,4 @@ button {
     --dm-text-secondary: #b0b0b0;
     --dm-border: #404040;
   }
-
-  /* Dark mode styles will be added here */
 }
